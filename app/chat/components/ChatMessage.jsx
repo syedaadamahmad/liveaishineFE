@@ -45,7 +45,7 @@ const aiBubbleStyle = bedtimeMode
       transition={{ duration: 0.3 }}
       className={`flex ${isUser ? "justify-end" : "justify-start"}`}
     >
-      <div className={`flex ${isUser ? "flex-row-reverse" : "flex-row"} gap-2 max-w-[85%] md:max-w-[80%]`}>
+     <div className={`flex ${isUser ? "flex-row-reverse" : "flex-row"} gap-1 sm:gap-2 max-w-full sm:max-w-[85%]`}>
         {/* Avatar */}
         <div className={`w-8 h-8 md:w-9 md:h-9 rounded-full flex items-center justify-center flex-shrink-0 ${
           isUser 

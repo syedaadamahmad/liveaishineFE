@@ -123,10 +123,10 @@ export default function SettingsModal({
             animate={{ scale: 1, y: 0 }}
             exit={{ scale: 0.9, y: 20 }}
             onClick={(e) => e.stopPropagation()}
-            className={`${glassStyle} rounded-3xl max-w-4xl w-full h-[80vh] flex overflow-hidden`}
+            className={`${glassStyle} rounded-3xl w-[95%] sm:w-full h-[85vh] flex flex-col sm:flex-row overflow-hidden`}
           >
             {/* Sidebar */}
-            <div className={`w-64 ${bedtimeMode ? 'bg-[#e0e5ec]' : 'bg-white/30 dark:bg-gray-800/30'} border-r ${bedtimeMode ? '' : 'border-white/20 dark:border-gray-700/30'} p-4`}>
+            <div className={`w-full sm:w-64 ${bedtimeMode ? 'bg-[#e0e5ec]' : 'bg-white/30 dark:bg-gray-800/30'} border-r ${bedtimeMode ? '' : 'border-white/20 dark:border-gray-700/30'} p-4`}>
               <div className="flex items-center gap-2 mb-6 px-2">
                 <Settings className={`w-6 h-6 ${bedtimeMode ? 'text-[#1a0f08]' : 'text-purple-600'}`} />
                 <h2 className={`text-xl font-bold ${textColor}`}>Settings</h2>

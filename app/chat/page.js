@@ -495,7 +495,7 @@ const handleSuggestionClick = (suggestion) => {
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5, ease: "easeOut" }}
-          className={`relative flex-grow overflow-y-auto px-4 md:px-5 py-6 space-y-5 scrollbar-hide ${
+          className={`relative flex-grow overflow-y-auto px-3 sm:px-4 md:px-5 py-4 sm:py-6 space-y-4 sm:space-y-5 ${
             FONT_FAMILY_MAP[settings.fontFamily]
           } ${FONT_SIZE_MAP[settings.fontSize]} ${
             settings.fontWeight === 'bold' ? 'font-bold' : settings.fontWeight === 'italic' ? 'italic' : ''

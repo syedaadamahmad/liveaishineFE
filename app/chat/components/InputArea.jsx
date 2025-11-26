@@ -47,14 +47,21 @@ export default function InputArea({
     const iconColor = "text-gray-200";
     const micIdle = "bg-white/20 hover:bg-white/30 border border-white/20 transition";
     const sendBtn = "bg-white/20 border border-white/20 hover:bg-white/30";
-    
+
     // ✅ FULL WIDTH ON FOCUS
     const widthClass = isFocused ? 'w-full max-w-6xl' : 'w-full max-w-2xl';
-    
+
     return (
       <div
         ref={containerRef}
-        className={`fixed bottom-6 left-1/2 -translate-x-1/2 ${glassBackground} ${widthClass} rounded-2xl px-4 py-3 flex items-end gap-3 transition-all duration-300 z-30`}
+        className={`
+    fixed bottom-2 left-1/2 -translate-x-1/2
+    w-[95%] sm:w-[90%] md:max-w-2xl lg:max-w-4xl
+    ${glassBackground}
+    rounded-2xl px-2 sm:px-4 py-2 sm:py-3
+    flex items-end gap-2 sm:gap-3
+    transition-all duration-300 z-30
+  `}
       >
         <textarea
           ref={textareaRef}
@@ -77,9 +84,8 @@ export default function InputArea({
           {...buttonProps}
           onClick={onToggleListening}
           disabled={loading}
-          className={`${appleButton} ${
-            listening ? "bg-gradient-to-r from-red-500 to-pink-500 text-white" : micIdle
-          }`}
+          className={`${appleButton} ${listening ? "bg-gradient-to-r from-red-500 to-pink-500 text-white" : micIdle
+            }`}
         >
           {listening ? (
             <MicOff className="w-5 h-5 text-white" />
@@ -134,11 +140,10 @@ export default function InputArea({
   };
 
   return (
-    <div 
+    <div
       ref={containerRef}
-      className={`${getPositionClass()} ${
-        isFirstMessage ? getWidthClass() : ''
-      } ${containerStyle} p-3 md:p-4 flex gap-3 items-end flex-shrink-0 z-20 transition-all duration-300 ${fontFamilyMap[fontFamily]} ${fontSizeMap[fontSize]}`}
+      className={`${getPositionClass()} ${isFirstMessage ? getWidthClass() : ''
+        } ${containerStyle} p-3 md:p-4 flex gap-3 items-end flex-shrink-0 z-20 transition-all duration-300 ${fontFamilyMap[fontFamily]} ${fontSizeMap[fontSize]}`}
     >
       <textarea
         ref={textareaRef}
@@ -160,9 +165,8 @@ export default function InputArea({
         {...buttonProps}
         onClick={onToggleListening}
         disabled={loading}
-        className={`${appleButton} ${buttonStyle} ${
-          listening ? "bg-gradient-to-r from-red-500 to-pink-500 scale-110" : ""
-        } disabled:opacity-50 disabled:cursor-not-allowed`}
+        className={`${appleButton} ${buttonStyle} ${listening ? "bg-gradient-to-r from-red-500 to-pink-500 scale-110" : ""
+          } disabled:opacity-50 disabled:cursor-not-allowed`}
         title={listening ? "Listening..." : "Tap to Speak"}
       >
         {listening ? (
@@ -184,11 +188,10 @@ export default function InputArea({
         {...buttonProps}
         onClick={onSend}
         disabled={loading || !input.trim()}
-        className={`${appleButton} ${
-          bedtimeMode
+        className={`${appleButton} ${bedtimeMode
             ? 'bg-[#e0e5ec] shadow-[4px_4px_8px_#b8bdc4,-4px_-4px_8px_#ffffff]'
             : 'bg-gradient-to-r from-pink-400 via-purple-500 to-cyan-500 hover:from-pink-500 hover:via-purple-600 hover:to-cyan-600'
-        } group overflow-hidden disabled:opacity-50 disabled:cursor-not-allowed`}
+          } group overflow-hidden disabled:opacity-50 disabled:cursor-not-allowed`}
         title="Send message"
       >
         {!bedtimeMode && (
